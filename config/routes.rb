@@ -1,4 +1,5 @@
 Flyberbach::Application.routes.draw do
+  get "users/new"
   resources :flights, :only => [:search, :index] do
     get 'search', :on => :collection
     post 'index', :on => :collection
@@ -10,6 +11,8 @@ Flyberbach::Application.routes.draw do
 
   resources :airports
 
+
+  match '/signup',  to: 'users#new', via:[:get]
   match '/search', to: 'flights#search', via:[:get]
   match '/help', to: 'static_pages#help', via:[:get]
   match '/about', to: 'static_pages#about', via:[:get]

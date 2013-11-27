@@ -1,9 +1,4 @@
 = form_for @flight, :method => :post, :url => flights_path do |f|
-  .triptype
-    %input.index_select#tripTypeOne{:type => "radio", :name => "tripType", :value=> "O", :checked => "checked"}
-    %label.indextext_select{:for => "tripTypeOne"} One-Way
-    %input.index_select#tripTypeRound{:type => "radio", :name => "tripType", :value => "R"}
-    %label.indextexy_select{:for => "tripTypeRound"} Round-trip
   .trippath
     %ul
       %li
@@ -42,5 +37,13 @@
         %p.addvOptions
           %input.index_select#classServiceP{:type => "radio", :value => "vip", :name => "cabin_class"}
           %label.indextext_select{:for=>"classServiceP"} Business & First
+  .triptype
+    %ul
+      %li
+        %input.index_select#tripTypeOne{:type => "radio", :name => "tripType", :value=> "O", :checked => "checked"}
+        %label.indextext_select{:for => "tripTypeOne"} One-Way
+      %li
+        %input.index_select#tripTypeRound{:type => "radio", :name => "tripType", :value => "R"}
+        %label.indextexy_select{:for => "tripTypeRound"} Round-trip
 
   = f.submit :class => "index_button submit", :value => "Find Flights"
