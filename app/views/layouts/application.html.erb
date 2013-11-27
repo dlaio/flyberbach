@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <!--
+    <div class="masthead">
+      <img src="src="/banner.gif""/>
+    </div>
+  -->
+    <header class="pagination-centered">
+    <div class="span10 offset1">
+      <img src="/banner.jpeg" align="middle"/> 
+    </div>
+    </header>
+    <div class="row">
+      <div class="span10 offset1">
+        <div class="navbar affix-top" data-spy="affix" data-offset-top="150">
+          <div class="navbar-inner">
+            <div class="container">
+              <nav>
+                <ul class="nav pull-right">
+                  <li><%= link_to "Home", root_path %></li>
+                  <li><%= link_to "Search", search_path %></li>
+                  <li><%= link_to "Help", help_path %></li>
+                  <li><%= link_to "About",about_path %></li>
+                  <li><%= link_to "Sign in", '#' %></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </header>
+    </div>
+
+    <%= yield %>
+
+  <div class="row">
+    <div class="span10 offset1">
+      <div class="modal-footer">
+        <p>Flyberbach - Powered by Ruby on Rails</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

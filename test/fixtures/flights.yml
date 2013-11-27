@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  airline: MyString
+  flight_no: MyString
+  plane_type: MyString
+  leave_time: 2013-11-27 08:54:23
+  leave_city: MyString
+  arrive_time: 2013-11-27 08:54:23
+  arrive_city: MyString
+  remark: MyText
+  created_at: 2013-11-27 08:54:23
+  updated_at: 2013-11-27 08:54:23
+  price: 1.5
+  cabin_class: MyString
+
+two:
+  airline: MyString
+  flight_no: MyString
+  plane_type: MyString
+  leave_time: 2013-11-27 08:54:23
+  leave_city: MyString
+  arrive_time: 2013-11-27 08:54:23
+  arrive_city: MyString
+  remark: MyText
+  created_at: 2013-11-27 08:54:23
+  updated_at: 2013-11-27 08:54:23
+  price: 1.5
+  cabin_class: MyString
