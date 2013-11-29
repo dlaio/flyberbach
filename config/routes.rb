@@ -1,22 +1,25 @@
 Flyberbach::Application.routes.draw do
-  get "users/new"
   resources :flights, :only => [:search, :index] do
     get 'search', :on => :collection
     post 'index', :on => :collection
   end
+
+  resources :users
 
   resources :flight_legs
 
   resources :routes
 
   resources :airports
+  resources :sessions, only: [:new, :create, :destroy]
 
-
-  match '/signup',  to: 'users#new', via:[:get]
-  match '/search', to: 'flights#search', via:[:get]
-  match '/help', to: 'static_pages#help', via:[:get]
-  match '/about', to: 'static_pages#about', via:[:get]
-  match '/home', to: 'static_pages#home', via:[:get]
+  match '/signin',  to: 'sessions#new',         via:[:get]
+  match '/signout', to: 'sessions#destroy',     via:[:delete]
+  match '/signup',  to: 'users#new',            via:[:get]
+  match '/search', to: 'flights#search',        via:[:get]
+  match '/help', to: 'static_pages#help',       via:[:get]
+  match '/about', to: 'static_pages#about',     via:[:get]
+  match '/home', to: 'static_pages#home',       via:[:get]
 
   root :to => 'static_pages#home'
 
