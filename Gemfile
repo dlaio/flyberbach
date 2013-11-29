@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
@@ -41,6 +43,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
+
+gem 'bootstrap'
 
 # Use unicorn as the app server
 # gem 'unicorn'
