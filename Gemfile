@@ -34,6 +34,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem "therubyracer"
+gem "less-rails"
+
 gem 'kaminari'
 
 gem 'haml'
@@ -43,4 +46,5 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
-gem 'bootstrap-sass'
+
+gem 'twitter-bootstrap-rails'
