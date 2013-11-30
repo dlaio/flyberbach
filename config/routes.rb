@@ -1,5 +1,7 @@
 Flyberbach::Application.routes.draw do
 
+  resources :searches
+
   #resources :flights, :only => [:new, :search, :index, :all] do
   #  get 'all',    :on => :collection
   #  get 'search', :on => :collection
@@ -11,9 +13,9 @@ Flyberbach::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/signin',  to: 'sessions#new',         via:[:get]
-  match '/signout', to: 'sessions#destroy',     via:[:delete]
+  match '/signout', to: 'sessions#destroy',     via:[:get]
   match '/signup',  to: 'users#new',            via:[:get]
-  match '/search', to: 'flights#search',        via:[:get]
+  #match '/search', to: 'flights#search',        via:[:get]
   match '/help', to: 'static_pages#help',       via:[:get]
   match '/about', to: 'static_pages#about',     via:[:get]
   match '/home', to: 'static_pages#home',       via:[:get]
