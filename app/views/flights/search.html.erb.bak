@@ -1,0 +1,8 @@
+<%= form_tag("/search", method: "get") do %>
+  	<%= label_tag(:q, "Search for:") %>
+	<%= select_date Date.today, :prefix => :departure_date %>
+	<%= select_date Date.today, :prefix => :return_date %>
+
+  	<%= submit_tag("Search") %>
+
+<% end %>

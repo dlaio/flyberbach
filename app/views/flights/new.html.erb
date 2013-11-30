@@ -1,5 +1,53 @@
-<h1>New flight</h1>
+<% provide(:title, 'New flight') %>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="span6 offset5">
+    <h1>New Flight</h1>
+  </div>
+</div>
 
-<%= link_to 'Back', flights_path %>
+<div class="row">
+  <div class="span10 offset1">
+    <%= form_for(@flight) do |f| %>
+<div class="field">
+    <%= f.label :airline %>
+    <%= f.text_field :airline %>
+  </div>
+  <div class="field">
+    <%= f.label :flight_no %>
+    <%= f.text_field :flight_no %>
+  </div>
+  <div class="field">
+    <%= f.label :plane_type %>
+    <%= f.text_field :plane_type %>
+  </div>
+  <div class="field">
+    <%= f.label :leave_time %>
+    <%= f.datetime_select :leave_time %>
+  </div>
+  <div class="field">
+    <%= f.label :leave_city %>
+    <%= f.text_field :leave_city %>
+  </div>
+  <div class="field">
+    <%= f.label :arrive_time %>
+    <%= f.datetime_select :arrive_time %>
+  </div>
+  <div class="field">
+    <%= f.label :arrive_city %>
+    <%= f.text_field :arrive_city %>
+  </div>
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %>
+    <%= f.text_area :remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+    <% end %>
+  </div>
+</div>

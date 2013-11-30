@@ -1,6 +1,46 @@
-<h1>Editing flight</h1>
+<% provide(:title, "Edit flight") %>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="span6 offset4">
+    <h1>Edit flight information</h1>
+  </div>
+</div>
 
-<%= link_to 'Show', @flight %> |
-<%= link_to 'Back', flights_path %>
+
+<div class="row">
+  <div class="span6 offset4">
+    <%= form_for(@flight) do |f| %>
+		<%= f.label :airline %>
+		<%= f.text_field :airline %>
+		
+		<%= f.label :flight_no %>
+		<%= f.text_field :flight_no %>
+
+		<%= f.label :plane_type %>
+		<%= f.text_field :plane_type %>
+
+	    <%= f.label :leave_time %>
+	    <%= f.datetime_select :leave_time %>
+
+	    <%= f.label :leave_city %>
+	    <%= f.text_field :leave_city %>
+
+	    <%= f.label :arrive_time %>
+	    <%= f.datetime_select :arrive_time %>
+
+	    <%= f.label :arrive_city %>
+	    <%= f.text_field :arrive_city %>
+
+	    <%= f.label :price %>
+	    <%= f.text_field :price %>
+
+	    <%= f.label :remark %>
+	    <%= f.text_area :remark %>
+      <div>
+        <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      </div>
+    <% end %>
+ </div>
+</div>
+
+  

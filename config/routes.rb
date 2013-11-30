@@ -1,16 +1,13 @@
 Flyberbach::Application.routes.draw do
-  resources :flights, :only => [:search, :index] do
-    get 'search', :on => :collection
-    post 'index', :on => :collection
-  end
 
+  #resources :flights, :only => [:new, :search, :index, :all] do
+  #  get 'all',    :on => :collection
+  #  get 'search', :on => :collection
+  #  post 'index', :on => :collection
+  #  post 'new', :on => :collection
+  #end
+  resources :flights
   resources :users
-
-  resources :flight_legs
-
-  resources :routes
-
-  resources :airports
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/signin',  to: 'sessions#new',         via:[:get]
