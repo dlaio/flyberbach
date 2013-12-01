@@ -15,13 +15,17 @@ def departure_date_conditions
   ["flights.leave_time >= ?", departure_time] unless departure_time.blank?
 end
 
-#def maximum_price_conditions
-#  ["products.price <= ?", maximum_price] unless maximum_price.blank?
-#end
+def departure_airport_conditions
+  ["flights.leave_city == ?", departure_airport] unless departure_airport.blank?
+end
 
-#def category_conditions
-#  ["products.category_id = ?", category_id] unless category_id.blank?
-#end
+def departure_airport_conditions
+  ["flights.arrive_city == ?", arrival_airport] unless arrival_airport.blank?
+end
+
+def arrival_date_conditions
+  ["flights.arrive_time <= ?", arrival_time] unless arrival_time.blank?
+end
 
 def conditions
   [conditions_clauses.join(' AND '), *conditions_options]
