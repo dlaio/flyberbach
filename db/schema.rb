@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130190749) do
+ActiveRecord::Schema.define(version: 20131201132840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "flights", force: true do |t|
     t.string   "airline",     null: false
@@ -29,6 +34,23 @@ ActiveRecord::Schema.define(version: 20131130190749) do
     t.datetime "updated_at"
     t.float    "price",       null: false
   end
+
+  create_table "line_items", force: true do |t|
+    t.integer  "flight_id"
+    t.integer  "cart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.string   "notes"
+    t.float    "price"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["user_id", "created_at"], name: "index_orders_on_user_id_and_created_at", using: :btree
 
   create_table "searches", force: true do |t|
     t.string   "departure_airport"

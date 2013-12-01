@@ -1,0 +1,11 @@
+<li> 
+	<span class="content"> 
+		<%= order.notes %> 
+	</span> 
+	<span class="content"> 
+		<%= order.price %> 
+	</span> 
+	<span class="timestamp"> 
+		Purchased <%= time_ago_in_words(order.created_at) %> ago. 
+	</span> 
+</li>

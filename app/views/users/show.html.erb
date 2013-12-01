@@ -1,6 +1,15 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  	<div class="span6 offset5">
+  	<div class="span6 offset1">
 		<h1>Welcome <%= @user.name %></h1>
 	</div>
-</div>
+
+	<div class="span6 offset5">
+		<% if @user.orders.any? %> 
+			<h3> Orders (<%= @user.orders.count %>)</h3> 
+			<ol class="orders"> 
+				<%= render @orders %> 
+			</ol> 
+			<%= will_paginate @orders %> 
+		<% end %>
+	</div>
